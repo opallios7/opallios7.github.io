@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+    <meta charset="utf-8">
+    
+    <title>지킬(jekyll)로 깃허브에 블로그 만들기 | 좋은친구의 생생한 기술 블로그</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="지킬과 Github을 연동하여 블로그를 만들수 있다는 소식을 뒤늦게 알고 지킬을 설치하고 Github에 블로그를 만들어보자고 마음을 먹었다. 열심히 구글링을 했는데 대부분 맥을 기준으로 설명한 사이트들이 많았다. 나는 윈도우 유저이기에 윈도우를 기준으로 설명한 사이트가 없나? 하는 생각에 이 글을 작성한다. 다음은 지킬을 설치하는데 도움이 된 사이트 링크이">
+<meta name="keywords" content="지킬,마크다운,깃헙,깃헙페이지,블로그,jekyll,markdown,mark2html,blog,github,github-pages">
+<meta property="og:type" content="article">
+<meta property="og:title" content="지킬(jekyll)로 깃허브에 블로그 만들기">
+<meta property="og:url" content="http://opallios7.github.io/2017/09/28/jekyll-github-blog/index.html">
+<meta property="og:site_name" content="좋은친구의 생생한 기술 블로그">
+<meta property="og:description" content="지킬과 Github을 연동하여 블로그를 만들수 있다는 소식을 뒤늦게 알고 지킬을 설치하고 Github에 블로그를 만들어보자고 마음을 먹었다. 열심히 구글링을 했는데 대부분 맥을 기준으로 설명한 사이트들이 많았다. 나는 윈도우 유저이기에 윈도우를 기준으로 설명한 사이트가 없나? 하는 생각에 이 글을 작성한다. 다음은 지킬을 설치하는데 도움이 된 사이트 링크이">
+<meta property="og:locale" content="ko">
+<meta property="og:image" content="http://opallios7.github.io/assets/Images/jekyll/jekyll-logo.png">
+<meta property="og:updated_time" content="2017-09-29T11:03:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="지킬(jekyll)로 깃허브에 블로그 만들기">
+<meta name="twitter:description" content="지킬과 Github을 연동하여 블로그를 만들수 있다는 소식을 뒤늦게 알고 지킬을 설치하고 Github에 블로그를 만들어보자고 마음을 먹었다. 열심히 구글링을 했는데 대부분 맥을 기준으로 설명한 사이트들이 많았다. 나는 윈도우 유저이기에 윈도우를 기준으로 설명한 사이트가 없나? 하는 생각에 이 글을 작성한다. 다음은 지킬을 설치하는데 도움이 된 사이트 링크이">
+<meta name="twitter:image" content="http://opallios7.github.io/assets/Images/jekyll/jekyll-logo.png">
+    
+
+    
+        <link rel="alternate" href="/" title="좋은친구의 생생한 기술 블로그" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">좋은친구의 생생한 기술 블로그</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/categories">Categories</a>
+                
+                    <a class="main-nav-link" href="/tags">Tags</a>
+                
+                    <a class="main-nav-link" href="/about">About</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/assets/Images/avatar.png" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="검색" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '포스트',
+            PAGES: 'Pages',
+            CATEGORIES: '카테고리',
+            TAGS: '태그',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="검색" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/assets/Images/avatar.png" />
+            <h2 id="name">KH.Lee(opallios)</h2>
+            <h3 id="title">.NET &amp; Android &amp; Web Developer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>Incheon, Korea</span>
+            <a id="follow" target="_blank" href="https://github.com/opallios7/">팔로우</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                2
+                <span>포스트</span>
+            </div>
+            <div class="article-info-block">
+                13
+                <span>태그</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="https://github.com/opallios7" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://twitter.com/opallios7" target="_blank" title="twitter" class=tooltip>
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://www.facebook.com/kyeonghee.lee.54" target="_blank" title="facebook" class=tooltip>
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="rss" class=tooltip>
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-jekyll-github-blog" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            지킬(jekyll)로 깃허브에 블로그 만들기
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/09/28/jekyll-github-blog/">
+            <time datetime="2017-09-28T10:33:11.000Z" itemprop="datePublished">2017-09-28</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/블로그-blog/">블로그(blog)</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/블로그-blog/지킬-jekyll/">지킬(jekyll)</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/blog/">blog</a>, <a class="tag-link" href="/tags/github/">github</a>, <a class="tag-link" href="/tags/github-pages/">github-pages</a>, <a class="tag-link" href="/tags/jekyll/">jekyll</a>, <a class="tag-link" href="/tags/mark2html/">mark2html</a>, <a class="tag-link" href="/tags/markdown/">markdown</a>, <a class="tag-link" href="/tags/깃헙/">깃헙</a>, <a class="tag-link" href="/tags/깃헙페이지/">깃헙페이지</a>, <a class="tag-link" href="/tags/마크다운/">마크다운</a>, <a class="tag-link" href="/tags/블로그/">블로그</a>, <a class="tag-link" href="/tags/지킬/">지킬</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>지킬과 Github을 연동하여 블로그를 만들수 있다는 소식을 뒤늦게 알고 지킬을 설치하고 Github에 블로그를 만들어보자고 마음을 먹었다. 열심히 구글링을 했는데 대부분 맥을 기준으로 설명한 사이트들이 많았다. 나는 윈도우 유저이기에 윈도우를 기준으로 설명한 사이트가 없나? 하는 생각에 이 글을 작성한다. 다음은 지킬을 설치하는데 도움이 된 사이트 링크이다.</p>
+<ul>
+<li><a href="http://tech.whatap.io/2015/09/11/install-jekyll-on-windows/" target="_blank" rel="external">Jekyll 윈도우에 설치해서 사용하기</a></li>
+</ul>
+<h3 id="지킬이-뭐지"><a href="#지킬이-뭐지" class="headerlink" title="지킬이 뭐지?"></a>지킬이 뭐지?</h3><p><a href="http://http://jekyllrb.com/" target="_blank" rel="external">Jekyll</a>은 마크다운 형태의 텍스트와 레이아웃, 테마등을 정적 HTML로 제너레이트하는 툴이다. Ruby를 기반으로 만들어져 있지만 Ruby의 문법을 알 필요가 없다. (처음 설치시 간단한 명령어 정도만 사용한다.) 또한, HTML과 CSS의 사용도 가능하기에 약간의 지식만 있으면 다양한 모습으로 꾸밀수 있는 장점이 있다.</p>
+<h3 id="이제-설치해-보자"><a href="#이제-설치해-보자" class="headerlink" title="이제 설치해 보자"></a>이제 설치해 보자</h3><p>내가 사용하면서 설치했던 것들은 다음과 같다.</p>
+<ul>
+<li>루비 (<a href="http://rubyinstaller.org/downloads/" target="_blank" rel="external">Ruby</a>, <a href="http://rubyinstaller.org/downloads/" target="_blank" rel="external">RubyDevkit</a>)</li>
+<li>파이선(<a href="https://www.python.org/downloads/" target="_blank" rel="external">Python</a>)</li>
+<li>Jekyll</li>
+<li>Rouge</li>
+<li>Pygment</li>
+<li>wdm</li>
+<li>bundler</li>
+<li>bundler</li>
+<li>jekyll-feed</li>
+<li>minima</li>
+</ul>
+<h3 id="루비-Ruby-설치"><a href="#루비-Ruby-설치" class="headerlink" title="루비(Ruby) 설치"></a>루비(Ruby) 설치</h3><p>Jekyll은 루비(Ruby)기반으로 동작한다. 그래서 Ruby가 반드시 필요하다. 루비와 함께 Development Kit도 함께 설치해야 정상적으로 작동한다.</p>
+<blockquote>
+<p>다운로드 사이트<br> <a href="http://rubyinstaller.org/downloads/" target="_blank" rel="external">http://rubyinstaller.org/downloads/</a></p>
+</blockquote>
+<p>위의 사이트에 가면 루비 설치파일이 보일것이다. 본인의 환경에 맞는 것을 다운로드 받아 설치한다.</p>
+<p><img src="/assets/Images/blog/jekyll/ruby_download.png" alt="루비 설치파일 다운로드" title="루비 설치파일 다운로드"></p>
+
+<p>나는 64비트 컴퓨터를 사용하고 있기에 64bit 버전을 다운로드 받아 설치한다.</p>
+<p><img src="/assets/Images/blog/jekyll/ruby_install_option.PNG" alt="루비 설치옵션 선택" title="루비 설치옵션 선택"></p>
+
+<p>설치할때 위의 옵션을 체크하면 어느 경로에서든 루비를 실행할수 있다.</p>
+<h3 id="루비-Ruby-Development-Kit-설치"><a href="#루비-Ruby-Development-Kit-설치" class="headerlink" title="루비(Ruby) Development Kit 설치"></a>루비(Ruby) Development Kit 설치</h3><p>Development Kit 역시 루비와 같은 경로에 가서 하단으로 조금 내려가면 Development Kit 설치 파일이 보일것이다.</p>
+<blockquote>
+<p>다운로드 사이트<br> <a href="http://rubyinstaller.org/downloads/" target="_blank" rel="external">http://rubyinstaller.org/downloads/</a></p>
+</blockquote>
+<p><img src="/assets/Images/blog/jekyll/ruby_developmentkit_download.png" alt="루비 Development Kit설치파일 다운로드" title="루비 Development Kit설치파일 다운로드"></p><br>다운받은 파일을 원하는 경로(나의 경우 “C:\Ruby23-x64”를 사용함)에 복사하고 해당 경로에서 실행하여 설치한다.<br>설치가 끝나면 DevKit을 사용할 수 있도록 초기화 해야합니다. 윈도우 CMD를 실행하여 DevKit이 설치된 경로로 이동한다.<br><br>&gt; <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt; cd C:\Ruby23-x64</div><div class="line">&gt;</div><div class="line">&gt; ruby dk.rb init</div><div class="line">&gt;</div><div class="line">&gt; ruby dk.rb install</div><div class="line">&gt;</div></pre></td></tr></table></figure><br><br>### 지킬(Jekyll) 설치<br><br>루비 설치가 정상적으로 되었다면 지킬은 설치가 간단하다. 루비의 gem 패키지 인스톨러를 사용하면 된다. 명령어는 다음과 같다.<br><br>&gt; <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt; gem install jekyll</div><div class="line">&gt;</div></pre></td></tr></table></figure><br><br>윈도우 권한체크 기능인 UAC가 켜있다면 권한을 물어본다. 설치를 위해서 어드민으로 권한 상승이 필요하니 권한 상승을 줘야 한다.<br><br>코드 블럭을 사용하기 위해 Rouge를 설치하는데 이것도 지킬과 같은 방법으로 설치한다.<br><br>&gt;  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;  gem install rouge</div><div class="line">&gt;</div></pre></td></tr></table></figure><br><br>여기까지 설치하면 지킬을 사용하기 위한 기본 환경 설치는 끝났다. 다음은 GitHub연동과 마크다운 부가기능을 위한 설치과정을 진행한다.<br><br>### 파이썬(Python) 설치<br>지킬에서 Syntax highlighter를 사용하기 위한 기능이 있는데 이것이 파이썬을 기반으로 작동되기에 먼저 파이썬을 설치한다.<br><br>&gt; 다운로드 사이트<br>&gt;  <a href="https://www.python.org/downloads/" target="_blank" rel="external">https://www.python.org/downloads/</a><br><br><p><img src="/assets/Images/blog/jekyll/python_download.png" alt="파이썬 설치파일 다운로드" title="파이썬 설치파일 다운로드"></p>
+
+<p>최신버전인 3.5.2을 다운받아 사용했다.</p>
+<h3 id="파이썬-환경변수에-등록"><a href="#파이썬-환경변수에-등록" class="headerlink" title="파이썬 환경변수에 등록"></a>파이썬 환경변수에 등록</h3><p>파이썬 설치가 완료되면 파이썬을 루비처럼 어느 경로에서나 사용이 가능하도록 환경변수에 파이썬이 설치된 경로(Path)를 추가한다. 나는 C:\Python\Python35-32 여기에 설치했다.</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; C:\Python\Python35-32;</div><div class="line">&gt; C:\Python\Python35-32\Scripts;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>파이썬이 정상적으로 설치가 되고, 환경변수를 정상적으로 등록되었으면 다음과 같은 화면이 나온다.</p>
+<p><img src="/assets/Images/blog/jekyll/python_complete.png" alt="파이썬 설치완료" title="파이썬 설치완료"></p>
+
+<h3 id="Pygments-설치"><a href="#Pygments-설치" class="headerlink" title="Pygments 설치"></a>Pygments 설치</h3><p>syntax highlighting을 사용하기 위해서 Pygments를 설치해야 한다. 파이썬이 설치되어 있으면 PIP를 이용하여 간단히 설치가 된다.명령어는 다음과 같다.</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt; pip install Pygments</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="지킬-Jekyll-실행"><a href="#지킬-Jekyll-실행" class="headerlink" title="지킬(Jekyll) 실행"></a>지킬(Jekyll) 실행</h3><p>이제 지킬과 관련된 모든 설치는 끝났다고 생각해도 된다. 그럼 지킬 서비스 구동을 위해 프로젝트 폴더를 하나 만들어보자. 만약 지킬을 구동시키는 데 라이브러리가 없다고 나오면 해당 라이브러리를 gem install을 통해서 설치하고 다시 실행하면 된다. 다음 명령어를 이용하여 프로젝트 디렉토리를 만들어보자.</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;  jekyll new project_name</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>만들어진 디렉토리로 들어가서 지킬을 실행하자.<br>명령어는 다음과 같다.</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt;  cd project_name</div><div class="line">&gt;  jekyll serve</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>지킬을 실행시키면 다음과 비슷한 화면이 보이고 하단에 접속 주소 및 포트가 보일것이다. 접속포트는 4000번이고, 서비스 종료는 Ctrl-C를 누르라고 친절하게 설명되어있다.</p>
+<p><img src="/assets/Images/blog/jekyll/jekyll_serve.png" alt="지킬 서비스 시작" title="지킬 서비스 시작"></p>
+
+<p>서비스가 시작되었으면 브라우저를 실행하고 localhost:4000을 실행하면 다음과 같은 화면이 보인다.</p>
+<p><img src="/assets/Images/blog/jekyll/jekyll_local_homepage.png" alt="지킬 로컬서비스 홈화면" title="지킬 로컬서비스 홈화면"></p>
+
+<p>여기까지 지킬 사용을 위한 포스트를 마친다. 다음에는 지킬과 깃을 연동하여 깔끔한 주소(URL)의 개인 블로그를 만드는 방법에 대해서 포스팅 하겠다.</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+</div>
+
+            
+    
+        <a href="http://opallios7.github.io/2017/09/28/jekyll-github-blog/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://opallios7.github.io/2017/09/28/jekyll-github-blog/">댓글</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2017/09/29/hexo-github-blog/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">다음 글</strong>
+            <div class="article-nav-title">
+                
+                    헥소(Hexo)로 깃허브에 블로그 만들기
+                
+            </div>
+        </a>
+    
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+</section>
+    
+
+</section>
+            
+                
+<aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">최근 글</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/09/29/hexo-github-blog/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/assets/Images/hexo/hexo-git.png)" alt="헥소(Hexo)로 깃허브에 블로그 만들기" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/블로그-blog/">블로그(blog)</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/블로그-blog/헥소-hexo/">헥소(hexo)</a></p>
+                            <p class="item-title"><a href="/2017/09/29/hexo-github-blog/" class="title">헥소(Hexo)로 깃허브에 블로그 만들기</a></p>
+                            <p class="item-date"><time datetime="2017-09-29T08:09:58.000Z" itemprop="datePublished">2017-09-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/09/28/jekyll-github-blog/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/assets/Images/jekyll/jekyll-logo.png)" alt="지킬(jekyll)로 깃허브에 블로그 만들기" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/블로그-blog/">블로그(blog)</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/블로그-blog/지킬-jekyll/">지킬(jekyll)</a></p>
+                            <p class="item-title"><a href="/2017/09/28/jekyll-github-blog/" class="title">지킬(jekyll)로 깃허브에 블로그 만들기</a></p>
+                            <p class="item-date"><time datetime="2017-09-28T10:33:11.000Z" itemprop="datePublished">2017-09-28</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">카테고리</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/블로그-blog/">블로그(blog)</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/블로그-blog/지킬-jekyll/">지킬(jekyll)</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/블로그-blog/헥소-hexo/">헥소(hexo)</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">아카이브</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">태그</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-pages/">github-pages</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jekyll/">jekyll</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mark2html/">mark2html</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/깃헙/">깃헙</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/깃헙페이지/">깃헙페이지</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/마크다운/">마크다운</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/블로그/">블로그</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/지킬/">지킬</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/헥소/">헥소</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">태그 클라우드</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/blog/" style="font-size: 20px;">blog</a> <a href="/tags/github/" style="font-size: 20px;">github</a> <a href="/tags/github-pages/" style="font-size: 20px;">github-pages</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/jekyll/" style="font-size: 10px;">jekyll</a> <a href="/tags/mark2html/" style="font-size: 20px;">mark2html</a> <a href="/tags/markdown/" style="font-size: 20px;">markdown</a> <a href="/tags/깃헙/" style="font-size: 20px;">깃헙</a> <a href="/tags/깃헙페이지/" style="font-size: 20px;">깃헙페이지</a> <a href="/tags/마크다운/" style="font-size: 20px;">마크다운</a> <a href="/tags/블로그/" style="font-size: 20px;">블로그</a> <a href="/tags/지킬/" style="font-size: 10px;">지킬</a> <a href="/tags/헥소/" style="font-size: 10px;">헥소</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">링크</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2017 KH.LEE(opallios)<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_config = function () {
+        
+            this.page.url = 'http://opallios7.github.io/2017/09/28/jekyll-github-blog/';
+        
+        this.page.identifier = 'jekyll-github-blog';
+    };
+    (function() { 
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'opallios7-github-io' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
