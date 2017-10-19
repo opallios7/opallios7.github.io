@@ -3,19 +3,19 @@
 <head>
     <meta charset="utf-8">
     
-    <title>좋은친구의 생생한 기술 블로그</title>
+    <title>좋은친구(가치를 만드는 사람들)의 블로그</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta property="og:type" content="website">
-<meta property="og:title" content="좋은친구의 생생한 기술 블로그">
+<meta property="og:title" content="좋은친구(가치를 만드는 사람들)의 블로그">
 <meta property="og:url" content="http://opallios7.github.io/index.html">
-<meta property="og:site_name" content="좋은친구의 생생한 기술 블로그">
+<meta property="og:site_name" content="좋은친구(가치를 만드는 사람들)의 블로그">
 <meta property="og:locale" content="ko">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="좋은친구의 생생한 기술 블로그">
+<meta name="twitter:title" content="좋은친구(가치를 만드는 사람들)의 블로그">
     
 
     
-        <link rel="alternate" href="/" title="좋은친구의 생생한 기술 블로그" type="application/atom+xml" />
+        <link rel="alternate" href="/" title="좋은친구(가치를 만드는 사람들)의 블로그" type="application/atom+xml" />
     
 
     
@@ -48,7 +48,7 @@
         <div class="outer">
             <a href="/" id="logo">
                 <i class="logo"></i>
-                <span class="site-title">좋은친구의 생생한 기술 블로그</span>
+                <span class="site-title">좋은친구(가치를 만드는 사람들)의 블로그</span>
             </a>
             <nav id="main-nav">
                 
@@ -154,11 +154,11 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                2
+                3
                 <span>포스트</span>
             </div>
             <div class="article-info-block">
-                13
+                19
                 <span>태그</span>
             </div>
         </div>
@@ -201,6 +201,156 @@
 
             
             <section id="main">
+    <article id="post-C-에서-SQLite3-사용하기" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2017/10/18/C-에서-SQLite3-사용하기/">C#에서 SQLite3 사용하기</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/10/18/C-에서-SQLite3-사용하기/">
+            <time datetime="2017-10-18T06:35:07.000Z" itemprop="datePublished">2017-10-18</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/개발-dev/">개발(dev)</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/개발-dev/c-c/">c#(c#)</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/NET/">.NET</a>, <a class="tag-link" href="/tags/C/">C#</a>, <a class="tag-link" href="/tags/SQLite/">SQLite</a>, <a class="tag-link" href="/tags/닷넷/">닷넷</a>, <a class="tag-link" href="/tags/로컬DB/">로컬DB</a>, <a class="tag-link" href="/tags/씨샵/">씨샵</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>SQLite는 라는 것을 오래전부터 들어왔는데 그동안 Access라는 MS의 강력하고 편리한 로컬DB를 활용하다보니 크게 사용할 일이 없었다. 하지만 Access는 유료이기에 자유롭게 사용하는데 제약이 있고 또 다양한 플렛폼에서 사용할 수 없는 단점이 있다. 그래서 이번 기회에 SQLite라는 것을 이용해서 프로그램을 만들어 보자고자 맘 먹고 공부를 시작한다.</p>
+<h2 id="개요"><a href="#개요" class="headerlink" title="개요"></a>개요</h2><p>SQLite는 자체 내장, 높은 안정성, 모든 기능을 갖춘 퍼블릭 도메인의 SQL 데이터베이스 엔진입니다. SQLite는 세계에서 가장 많이 사용되는 데이터베이스 엔진입니다. 라고 SQLite 홈페이지에 나와 있다. 좀더 자세히 알고 싶다면 다음의 URL <a href="https://www.sqlite.org" target="_blank" rel="external">SQLite 홈페이지</a>를 참고하길 바란다.</p>
+<h2 id="SQLite-GUI-관리-툴"><a href="#SQLite-GUI-관리-툴" class="headerlink" title="SQLite GUI 관리 툴"></a>SQLite GUI 관리 툴</h2><p>MSSQL에 Microsoft SQL Server Management Studio가 있고 ORACLE에 SQL Developer가 있듯 SQLite도 편리하게 관리할 수 있는 GUI 툴이 존재한다. 구글을 해보니 다양한 프로그램들이 있었다. 무료도 있고 유료도 많이 존재했다. 가장 대표적인 툴이 <a href="http://sqlitebrowser.org" target="_blank" rel="external">DB Browser for SQLite</a>라는 프로그램이었다. 간단하게 사용해본 결과 만족스러웠지만 한가지 앞으로 이야기할 것이지만 .NET용 라이브러리로 암호화 된 DB파일이 열리지 않았다. DB Browser는 SQLCipher라는 별도의 라이브러리를 사용하여 만들어져 있어 서로 호환이 되지 않아 다른 것을 찾았다. 한참을 찾다 작년까지 업데이트 되던 <a href="https://sqlitestudio.pl/index.rvt" target="_blank" rel="external">SQLite Studio</a>라는 프로그램을 찾았다. 잠깐 사용해보니 이 프로그램은 SQLite에서 사용하는 암호화 라이브러리를 전부 지원하는 것 같다. </p>
+<h2 id="Visual-Studio-SQLite-라이브러리-설치"><a href="#Visual-Studio-SQLite-라이브러리-설치" class="headerlink" title="Visual Studio SQLite 라이브러리 설치"></a>Visual Studio SQLite 라이브러리 설치</h2><p>Visual Studio에서 SQLite 라이브러이의 설치는 생각보다 간단하다. 내 기억속에는 Visual Studio 2012(정확하지는 않음)부터 Nuget이 내장되어있어 Nuget을 통해 해당 라이브러리를 찾아 설치를 누르면 간단하게 설치된다. (이것이 싫으면 직접 찾아서 설치하여 해당 라이브러리를 참조를 통해 가져오면 되는데 여기선 생략한다.)</p>
+<p>다음의 메뉴에서 솔루션용 Nuget 패키지 관리를 실행한다.</p>
+<p><img src="/assets/Images/dev/dotnet/run_nuget_module.png" alt="Visual Studio에서 Nuget 실행" title="Nuget 실행" width="500" height="400/"></p>
+
+<p>찾아보기로 가서 <strong>“SQLite”</strong>를 입력하고 검색하여 설치를 누르면 Visual Studio에서는 다음과 같이 종속라이브러리를 찾아 설치한다.</p>
+<p><img src="/assets/Images/dev/dotnet/install_sqlite_in_visualstudio.png" alt="Visual Studio에서 Sqlite 라이브러리 설치" title="Sqlite 라이브러리 설치 " width="500" height="400/"></p>
+
+<p>설치가 완료가 되면 해당 프로젝트에서 사용할 준비가 완료되었다고 생각하면 된다.</p>
+<h2 id="DB-연결-및-종료"><a href="#DB-연결-및-종료" class="headerlink" title="DB 연결 및 종료"></a>DB 연결 및 종료</h2><p>SQLite를 연결하는 방법은 ConnectionString만 정의하면 나머진 .NET에서 제공하는 MySQL이나 MSSQL, ORACLE등의 사용과 라이브러리와 똑같이 사용할 수 있다. 약간의 차이는 있겠지만 기본적인 작업을 한다면 똑같다고 생각해도 큰 무리는 없어보인다.</p>
+<p>다음의 코드는 DB를 연결하는 방법이다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">SQLiteConnection conn = <span class="keyword">new</span> SQLiteConnection(<span class="string">"Data Source=sqlite 파일 경로;Version=3;"</span>);</div><div class="line">conn.open();  <span class="comment">// DB연결</span></div><div class="line"></div><div class="line"><span class="comment">// 이곳에 필요한 쿼리를 호출하여 사용</span></div><div class="line"></div><div class="line">conn.Close(); <span class="comment">// DB종료</span></div></pre></td></tr></table></figure>
+<h2 id="데이터-조회-Select"><a href="#데이터-조회-Select" class="headerlink" title="데이터 조회(Select)"></a>데이터 조회(Select)</h2><p>데이터를 조회하는 방법의 코드은 다음과 같다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">SQLiteCommand cmd = <span class="keyword">new</span> SQLiteCommand(<span class="string">"SELECT name, value FROM sample_table"</span>, conn);</div><div class="line">  </div><div class="line">SQLiteDataReader dr = cmd.ExecuteReader();</div><div class="line"><span class="keyword">if</span> (dr.HasRows)</div><div class="line">&#123;</div><div class="line">    <span class="keyword">while</span>(dr.read())</div><div class="line">    &#123;</div><div class="line">      Console.WriteLine(dr[<span class="string">"name"</span>].ToString());</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">dr.Close();</div></pre></td></tr></table></figure>
+<h2 id="데이터-입력-수정-삭제-Insert-Update-Delete"><a href="#데이터-입력-수정-삭제-Insert-Update-Delete" class="headerlink" title="데이터 입력/수정/삭제 (Insert/Update/Delete)"></a>데이터 입력/수정/삭제 (Insert/Update/Delete)</h2><p>다음은 데이터를 입력하는 방법의 코드이다.(수정/삭제는 쿼리만 해당 트랜잭션에 맞게 변경하여 사용하면 된다.)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">SQLiteCommand cmd = <span class="keyword">new</span> SQLiteCommand(<span class="string">"INSERT INTO sample_table ( name, value ) VALUES ( @name, @value)"</span>, conn);</div><div class="line">cmd.Parameters.Add(<span class="string">"@name"</span>, DbType.String);</div><div class="line">cmd.Parameters.Add(<span class="string">"@value"</span>, DbType.String);</div><div class="line">cmd.Prepare();</div><div class="line"></div><div class="line">cmd.Parameters[<span class="number">0</span>].Value = tbName.Text;</div><div class="line">cmd.Parameters[<span class="number">1</span>].Value = tbValue.Text;</div><div class="line">cmd.ExecuteNonQuery();</div></pre></td></tr></table></figure>
+<h2 id="DB파일-암호화"><a href="#DB파일-암호화" class="headerlink" title="DB파일 암호화"></a>DB파일 암호화</h2><p>파일암호화는 생각보다 아주 쉬웠다. 다음의 딱 두가지 메소드만 알면 암호화를 하고 암호인증을 하여 접근이 가능하다. </p>
+<ul>
+<li>SetPassword(databasePassword) : string 또는 byte[] 타입의 파라메터 사용</li>
+<li>ChangePassword(newPassword) : string 또는 byte[] 타입의 파라메터 사용</li>
+</ul>
+<p>다음은 SQLite파일이 존재한다는 가정하에 해당 파일을 암호화 하는 코드이다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">SQLiteConnection conn = <span class="keyword">new</span> SQLiteConnection(<span class="string">"Data Source=sqlite 파일 경로;Version=3;"</span>);</div><div class="line">conn.Open();</div><div class="line">conn.ChangePassword(<span class="string">"패스워드"</span>);</div><div class="line">.</div><div class="line">.</div><div class="line">.</div><div class="line">conn.Close();</div></pre></td></tr></table></figure>
+<p>다음은 암호화가 걸려있는 SQLite파일을 인증하는 코드이다.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">SQLiteConnection conn = <span class="keyword">new</span> SQLiteConnection(<span class="string">"Data Source=sqlite 파일 경로;Version=3;"</span>);</div><div class="line">conn.SetPassword(<span class="string">"패스워드"</span>);</div><div class="line">conn.Open();</div><div class="line">.</div><div class="line">.</div><div class="line">.</div><div class="line">conn.Close();</div></pre></td></tr></table></figure></p>
+<p>암호가 틀렸을 경우 디버그 모드로 보면 다음과 같음 메시지가 나타난다.</p>
+<p><img src="/assets/Images/dev/dotnet/show_errormsg_sqlite_wrong_password.png" alt="SQLite 패스워드 오류 메시지" title="SQLite 패스워드 오류 메시지" width="300" height="200/"></p>
+
+
+
+
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+</div>
+
+            
+    
+        <a href="http://opallios7.github.io/2017/10/18/C-에서-SQLite3-사용하기/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://opallios7.github.io/2017/10/18/C-에서-SQLite3-사용하기/">댓글</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-hexo-github-blog" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -517,6 +667,25 @@
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2017/10/18/C-에서-SQLite3-사용하기/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/assets/Images/dev/dotnet/sqlite_banner.gif)" alt="C#에서 SQLite3 사용하기" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/개발-dev/">개발(dev)</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/개발-dev/c-c/">c#(c#)</a></p>
+                            <p class="item-title"><a href="/2017/10/18/C-에서-SQLite3-사용하기/" class="title">C#에서 SQLite3 사용하기</a></p>
+                            <p class="item-date"><time datetime="2017-10-18T06:35:07.000Z" itemprop="datePublished">2017-10-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2017/09/29/hexo-github-blog/" class="thumbnail">
     
     
@@ -561,7 +730,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">카테고리</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/블로그-blog/">블로그(blog)</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/블로그-blog/지킬-jekyll/">지킬(jekyll)</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/블로그-blog/헥소-hexo/">헥소(hexo)</a><span class="category-list-count">1</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/개발-dev/">개발(dev)</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/개발-dev/c-c/">c#(c#)</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/블로그-blog/">블로그(blog)</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/블로그-blog/지킬-jekyll/">지킬(jekyll)</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/블로그-blog/헥소-hexo/">헥소(hexo)</a><span class="category-list-count">1</span></li></ul></li></ul>
         </div>
     </div>
 
@@ -570,7 +739,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">아카이브</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">10월 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">9월 2017</a><span class="archive-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -579,7 +748,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">태그</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-pages/">github-pages</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jekyll/">jekyll</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mark2html/">mark2html</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/깃헙/">깃헙</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/깃헙페이지/">깃헙페이지</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/마크다운/">마크다운</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/블로그/">블로그</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/지킬/">지킬</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/헥소/">헥소</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/NET/">.NET</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C#</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQLite/">SQLite</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-pages/">github-pages</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jekyll/">jekyll</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mark2html/">mark2html</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/깃헙/">깃헙</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/깃헙페이지/">깃헙페이지</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/닷넷/">닷넷</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/로컬DB/">로컬DB</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/마크다운/">마크다운</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/블로그/">블로그</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/씨샵/">씨샵</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/지킬/">지킬</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/헥소/">헥소</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -588,7 +757,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">태그 클라우드</h3>
         <div class="widget tagcloud">
-            <a href="/tags/blog/" style="font-size: 20px;">blog</a> <a href="/tags/github/" style="font-size: 20px;">github</a> <a href="/tags/github-pages/" style="font-size: 20px;">github-pages</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/jekyll/" style="font-size: 10px;">jekyll</a> <a href="/tags/mark2html/" style="font-size: 20px;">mark2html</a> <a href="/tags/markdown/" style="font-size: 20px;">markdown</a> <a href="/tags/깃헙/" style="font-size: 20px;">깃헙</a> <a href="/tags/깃헙페이지/" style="font-size: 20px;">깃헙페이지</a> <a href="/tags/마크다운/" style="font-size: 20px;">마크다운</a> <a href="/tags/블로그/" style="font-size: 20px;">블로그</a> <a href="/tags/지킬/" style="font-size: 10px;">지킬</a> <a href="/tags/헥소/" style="font-size: 10px;">헥소</a>
+            <a href="/tags/NET/" style="font-size: 10px;">.NET</a> <a href="/tags/C/" style="font-size: 10px;">C#</a> <a href="/tags/SQLite/" style="font-size: 10px;">SQLite</a> <a href="/tags/blog/" style="font-size: 20px;">blog</a> <a href="/tags/github/" style="font-size: 20px;">github</a> <a href="/tags/github-pages/" style="font-size: 20px;">github-pages</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/jekyll/" style="font-size: 10px;">jekyll</a> <a href="/tags/mark2html/" style="font-size: 20px;">mark2html</a> <a href="/tags/markdown/" style="font-size: 20px;">markdown</a> <a href="/tags/깃헙/" style="font-size: 20px;">깃헙</a> <a href="/tags/깃헙페이지/" style="font-size: 20px;">깃헙페이지</a> <a href="/tags/닷넷/" style="font-size: 10px;">닷넷</a> <a href="/tags/로컬DB/" style="font-size: 10px;">로컬DB</a> <a href="/tags/마크다운/" style="font-size: 20px;">마크다운</a> <a href="/tags/블로그/" style="font-size: 20px;">블로그</a> <a href="/tags/씨샵/" style="font-size: 10px;">씨샵</a> <a href="/tags/지킬/" style="font-size: 10px;">지킬</a> <a href="/tags/헥소/" style="font-size: 10px;">헥소</a>
         </div>
     </div>
 
