@@ -3,15 +3,20 @@
 <head>
     <meta charset="utf-8">
     
-    <title>태그: blog | 좋은친구(가치를 만드는 사람들)의 블로그</title>
+    <title>C# List&lt;T&gt; 정렬하기 | 좋은친구(가치를 만드는 사람들)의 블로그</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta property="og:type" content="website">
-<meta property="og:title" content="좋은친구(가치를 만드는 사람들)의 블로그">
-<meta property="og:url" content="http://opallios7.github.io/tags/blog/index.html">
+    <meta name="description" content="오랜만에 블로깅을 남기는 것 같다. 그동안 일을 좀 하느라 정리할 시간이 없어 블로깅을 하지 못했다.C#에서 List는 엄청 많이 사용되는 Collection중에 하나이다. 나는 Array보다 List를 더 선호한다. 이번 포스트에서는 클래스 객체를 담은 List를 정렬하는 것을 이야기 하려고 한다.  Sort 메소드 형식List Collection에는 기">
+<meta name="keywords" content="C#,.NET,List(Collection),Sort,씨샵,닷넷,리스트(Collection),정렬,Delegate,Lamda function,델리게이트,람다식">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C# List&lt;T&gt; 정렬하기">
+<meta property="og:url" content="http://opallios7.github.io/2017/11/10/list-sort-csharp/index.html">
 <meta property="og:site_name" content="좋은친구(가치를 만드는 사람들)의 블로그">
+<meta property="og:description" content="오랜만에 블로깅을 남기는 것 같다. 그동안 일을 좀 하느라 정리할 시간이 없어 블로깅을 하지 못했다.C#에서 List는 엄청 많이 사용되는 Collection중에 하나이다. 나는 Array보다 List를 더 선호한다. 이번 포스트에서는 클래스 객체를 담은 List를 정렬하는 것을 이야기 하려고 한다.  Sort 메소드 형식List Collection에는 기">
 <meta property="og:locale" content="ko">
+<meta property="og:updated_time" content="2017-11-12T06:15:01.833Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="좋은친구(가치를 만드는 사람들)의 블로그">
+<meta name="twitter:title" content="C# List&lt;T&gt; 정렬하기">
+<meta name="twitter:description" content="오랜만에 블로깅을 남기는 것 같다. 그동안 일을 좀 하느라 정리할 시간이 없어 블로깅을 하지 못했다.C#에서 List는 엄청 많이 사용되는 Collection중에 하나이다. 나는 Array보다 List를 더 선호한다. 이번 포스트에서는 클래스 객체를 담은 List를 정렬하는 것을 이야기 하려고 한다.  Sort 메소드 형식List Collection에는 기">
     
 
     
@@ -200,86 +205,165 @@
 </aside>
 
             
-            <section id="main">
-<div class="timeline timeline-wrap">
-    <div class="timeline-row timeline-row-major">
-        <span class="node"><i class="fa fa-tag"></i></span>
-        <h1 class="title">#blog</h1>
-    </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+            <section id="main"><article id="post-list-sort-csharp" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2017/09/29/hexo-github-blog/">헥소(Hexo)로 깃허브에 블로그 만들기</a>
+        <h1 class="article-title" itemprop="name">
+            C# List&lt;T&gt; 정렬하기
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2017/09/29/hexo-github-blog/">
-            <time datetime="2017-09-29T08:09:58.000Z" itemprop="datePublished">2017-09-29</time>
+        <a href="/2017/11/10/list-sort-csharp/">
+            <time datetime="2017-11-10T13:35:03.000Z" itemprop="datePublished">2017-11-10</time>
         </a>
     </div>
 
 
-                    
+                        
     <div class="article-category">
     	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/블로그-blog/">블로그(blog)</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/블로그-blog/헥소-hexo/">헥소(hexo)</a>
+        <a class="article-category-link" href="/categories/개발-dev/">개발(dev)</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/개발-dev/c-c/">c#(c#)</a>
     </div>
 
-                    
+                        
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/blog/">blog</a>, <a class="tag-link" href="/tags/github/">github</a>, <a class="tag-link" href="/tags/github-pages/">github-pages</a>, <a class="tag-link" href="/tags/hexo/">hexo</a>, <a class="tag-link" href="/tags/mark2html/">mark2html</a>, <a class="tag-link" href="/tags/markdown/">markdown</a>, <a class="tag-link" href="/tags/깃헙/">깃헙</a>, <a class="tag-link" href="/tags/깃헙페이지/">깃헙페이지</a>, <a class="tag-link" href="/tags/마크다운/">마크다운</a>, <a class="tag-link" href="/tags/블로그/">블로그</a>, <a class="tag-link" href="/tags/헥소/">헥소</a>
+        <a class="tag-link" href="/tags/NET/">.NET</a>, <a class="tag-link" href="/tags/C/">C#</a>, <a class="tag-link" href="/tags/Delegate/">Delegate</a>, <a class="tag-link" href="/tags/Lamda-function/">Lamda function</a>, <a class="tag-link" href="/tags/List-Collection/">List(Collection)</a>, <a class="tag-link" href="/tags/Sort/">Sort</a>, <a class="tag-link" href="/tags/닷넷/">닷넷</a>, <a class="tag-link" href="/tags/델리게이트/">델리게이트</a>, <a class="tag-link" href="/tags/람다식/">람다식</a>, <a class="tag-link" href="/tags/리스트-Collection/">리스트(Collection)</a>, <a class="tag-link" href="/tags/씨샵/">씨샵</a>, <a class="tag-link" href="/tags/정렬/">정렬</a>
     </div>
 
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+                    </div>
                 
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2017/09/28/jekyll-github-blog/">지킬(jekyll)로 깃허브에 블로그 만들기</a>
-        </h1>
-    
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>오랜만에 블로깅을 남기는 것 같다. 그동안 일을 좀 하느라 정리할 시간이 없어 블로깅을 하지 못했다.<br>C#에서 List<t>는 엄청 많이 사용되는 Collection중에 하나이다. 나는 Array보다 List를 더 선호한다. 이번 포스트에서는 클래스 객체를 담은 List를 정렬하는 것을 이야기 하려고 한다. </t></p>
+<h2 id="Sort-메소드-형식"><a href="#Sort-메소드-형식" class="headerlink" title="Sort 메소드 형식"></a>Sort 메소드 형식</h2><p>List Collection에는 기본적으로 Sort라는 메소드가 존재한다. Collection이라는 상위 클래스가 가지는 메소드이다. Collection을 상속받는 클래스는 모두 존재한다고 해도 무방할 것이다.<br>Sort가 가지는 파라메터는 다음의 4가지가 존재한다.</p>
+<p>Sample이라는 클래스를 생성하여 예를 들겠다.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Sample</span></span></div><div class="line"><span class="class"></span>&#123;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">int</span> code;</div><div class="line">    <span class="keyword">public</span> string name;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<ul>
+<li><h4 id="Sort"><a href="#Sort" class="headerlink" title="Sort();"></a>Sort();</h4><p>단일 타입에서 사용하는 메소드로 오름차순으로 정렬이 된다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">list.Sort();</div></pre></td></tr></table></figure>
+</li>
+<li><h4 id="Sort-Comparison-comparison"><a href="#Sort-Comparison-comparison" class="headerlink" title="Sort(Comparison comparison);"></a>Sort(Comparison<t> comparison);</t></h4><p>값을 비교하는 함수를 활용하여 정렬</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Sample x, Sample y)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">  <span class="keyword">if</span> (x.code &gt; y.code) <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">  <span class="keyword">else</span> <span class="keyword">if</span>(x.code &lt; y.code) <span class="keyword">return</span> -<span class="number">1</span>;</div><div class="line">  <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">  <span class="comment">// (문자열 비교 : x.name.CompareTo(y.name))</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">list.Sort(compare); <span class="comment">// 함수를 파라메터로 전달</span></div></pre></td></tr></table></figure>
+</li>
+<li><h4 id="Sort-IComparer-comparer"><a href="#Sort-IComparer-comparer" class="headerlink" title="Sort(IComparer comparer);"></a>Sort(IComparer<t> comparer);</t></h4><p>IComparer라는 인터페이스를 상속한 클래스를 활용하여 정렬 (클래스 내부에 인터페이스 함수를 구현)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">public class SampleCompare : IComparer</div><div class="line">&#123;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Sample x, Sample y)</span></span></div><div class="line"><span class="function">  </span>&#123;</div><div class="line">    <span class="keyword">if</span> (x.code &gt; y.code) <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(x.code &lt; y.code) <span class="keyword">return</span> -<span class="number">1</span>;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    <span class="comment">// (문자열 비교 : x.name.CompareTo(y.name))</span></div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">SampleCompare sc = <span class="keyword">new</span> SampleCompare();</div><div class="line"></div><div class="line">list.Sort(sc);  <span class="comment">// ICompare를 상속한 클래스의 인스턴스를 파라메터로 전달</span></div></pre></td></tr></table></figure>
+</li>
+<li><h4 id="Sort-int-index-int-count-IComparer-comparer"><a href="#Sort-int-index-int-count-IComparer-comparer" class="headerlink" title="Sort(int index, int count, IComparer comparer);"></a>Sort(int index, int count, IComparer<t> comparer);</t></h4><p>IComparer와 기능이 동일하고 차이점은 index에 시작위치를 count에 비교 개수를 입력</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">public class SampleCompare : IComparer</div><div class="line">&#123;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Sample x, Sample y)</span></span></div><div class="line"><span class="function">  </span>&#123;</div><div class="line">    <span class="keyword">if</span> (x.code &gt; y.code) <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(x.code &lt; y.code) <span class="keyword">return</span> -<span class="number">1</span>;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    <span class="comment">// (문자열 비교 : x.name.CompareTo(y.name))</span></div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">SampleCompare sc = <span class="keyword">new</span> SampleCompare();</div><div class="line"></div><div class="line">list.Sort(index, count, sc);  <span class="comment">// ICompare를 상속한 클래스의 인스턴스와 시작위치, 개수를 파라메터로 전달</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="델리게이트를-활용한-정렬"><a href="#델리게이트를-활용한-정렬" class="headerlink" title="델리게이트를 활용한 정렬"></a>델리게이트를 활용한 정렬</h2><p>위의 메소드 4가지 형식중에 2번째 형식을 사용하는데 함수를 별도로 만들면 정렬 기준을 알려면 정의한 함수를 찾아서 봐야하는 번거로움이 생긴다. 이를 조금은 편하게 하기 위해 델리게이트를 사용해서 Sort() 메소드 내에 함수를 정의해서 사용할 수 있다. 예제 소스를 보면 금방 이해가 갈 것이라고 생각한다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">list.sort(delegate (Sample x, Sample y) &#123;</div><div class="line">  <span class="keyword">if</span> (x.code &gt; y.code) <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">  <span class="keyword">else</span> <span class="keyword">if</span>(x.code &lt; y.code) <span class="keyword">return</span> -<span class="number">1</span>;</div><div class="line">  <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">  <span class="comment">// (문자열 비교 : x.name.CompareTo(y.name))</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>이를 람다식을 활용해서 더 간단하게 표현하면 다음과 같다.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">list.sort((x, y) =&gt; (x.code &gt; y.code) ? <span class="number">1</span> : -<span class="number">1</span>;</div><div class="line"><span class="comment">// (문자열 비교 : list.sort((x, y) =&gt; x.name.CompareTo(y.name));</span></div></pre></td></tr></table></figure></p>
 
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/09/28/jekyll-github-blog/">
-            <time datetime="2017-09-28T10:33:11.000Z" itemprop="datePublished">2017-09-28</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/블로그-blog/">블로그(blog)</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/블로그-blog/지킬-jekyll/">지킬(jekyll)</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/blog/">blog</a>, <a class="tag-link" href="/tags/github/">github</a>, <a class="tag-link" href="/tags/github-pages/">github-pages</a>, <a class="tag-link" href="/tags/jekyll/">jekyll</a>, <a class="tag-link" href="/tags/mark2html/">mark2html</a>, <a class="tag-link" href="/tags/markdown/">markdown</a>, <a class="tag-link" href="/tags/깃헙/">깃헙</a>, <a class="tag-link" href="/tags/깃헙페이지/">깃헙페이지</a>, <a class="tag-link" href="/tags/마크다운/">마크다운</a>, <a class="tag-link" href="/tags/블로그/">블로그</a>, <a class="tag-link" href="/tags/지킬/">지킬</a>
-    </div>
-
-                </div>
-            </div>
+        
         </div>
-    
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
 </div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+</div>
+
+            
+    
+        <a href="http://opallios7.github.io/2017/11/10/list-sort-csharp/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://opallios7.github.io/2017/11/10/list-sort-csharp/">댓글</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2017/10/18/use-sqlite-csharp/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">이전 글</strong>
+            <div class="article-nav-title">C#에서 SQLite3 사용하기</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+</section>
+    
+
 </section>
             
                 
@@ -442,11 +526,13 @@
     <script>
     var disqus_config = function () {
         
-        this.page.identifier = '';
+            this.page.url = 'http://opallios7.github.io/2017/11/10/list-sort-csharp/';
+        
+        this.page.identifier = 'list-sort-csharp';
     };
     (function() { 
         var d = document, s = d.createElement('script');  
-        s.src = '//' + 'opallios7-github-io' + '.disqus.com/count.js';
+        s.src = '//' + 'opallios7-github-io' + '.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
     })();
